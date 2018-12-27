@@ -1,0 +1,25 @@
+.news{
+    margin-top:32px;
+}
+
+.news .news-container{
+    position: relative;
+}
+
+.news-container .addNews{
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+.news-container .addNews a{
+    color:rgb(105, 214, 105);
+    border-radius:25px;
+    padding:10px;
+    border:2px solid rgb(105, 214, 105);
+    transition:0.3s;
+}
+.news-container .addNews a:hover{
+    color:black;
+    background-color:rgb(105, 214, 105);
+    text-decoration: none;
+}

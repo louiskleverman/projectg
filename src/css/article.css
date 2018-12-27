@@ -1,0 +1,44 @@
+.article{
+}
+
+.article .article-box{
+    background-color: rgb(34, 34, 34);
+    padding:0;
+
+}
+.article-box .article-box-info{
+    
+    padding:32px 20px;
+}
+
+.article .articleThumbnail-box{
+    width:100%;
+    height:300px;
+    overflow: hidden;
+}
+.article #articleThumbnail{
+    width:100%;
+    height:auto;
+}
+
+.article #articleTitle{
+    font-size:52px;
+    font-weight:500;
+    /* Change font-style */
+}
+
+.article #articleInfo{
+    text-transform: capitalize;
+    font-style: italic;
+    color:rgb(167, 167, 167);
+}
+
+.article #articlePreambul{
+    font-size:20px;
+}
+
+.article #articleContent{
+    font-size:16px;
+    padding:10px 20px;
+    border-top:1px solid rgb(82, 82, 82);
+}

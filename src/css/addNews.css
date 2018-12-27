@@ -1,0 +1,59 @@
+.addNews{
+    margin-top:32px;
+}
+
+.addNews input#inputTitle{
+    width:100%;
+    background-color: rgba(0,0,0,0);
+    color:rgb(226, 226, 226);
+    padding:8px;
+    font-size:16px;
+    border:1px solid rgb(216, 216, 216);
+    margin-bottom:5px;
+    display: block;
+}
+.addNews textarea{
+    width:100%;
+    background-color: rgba(0,0,0,0);
+    color:rgb(226, 226, 226);
+    padding:8px;
+    font-size:16px;
+    border:1px solid rgb(216, 216, 216);
+    margin-bottom:5px;
+    display: block;
+    height:6em;
+}
+.addNews textarea#inputContent{
+    height:30em;
+}
+
+#outputImage{
+    width:98%;
+    height:auto;
+    display: block;
+    margin:10px auto;
+    border:2px solid rgba(255, 123, 0, 0.329);
+}
+
+#inputImage{
+    color:rgb(255, 123, 0);
+    border:1px solid white;
+    padding:5px;
+}
+
+.addNews button#inputButton{
+    cursor: pointer;
+    color:white;
+    background-color: rgba(0,0,0,0);
+    border:2px solid white;
+    padding:5px 25px;
+    display: block;
+    margin: auto;
+    margin-top:10px;
+    margin-bottom:32px;
+    transition:0.3s;
+}
+.addNews button#inputButton:hover{
+    color:black;
+    background-color: white;
+}

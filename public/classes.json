@@ -1,0 +1,665 @@
+[
+    {
+        "order":"Man of Magic",            
+        "description":"Men of magic are adventurers that have been gifted with the force of neutral magic (not void or light).</br>They were either born or gifted these powers during their lives, making them able to tap into the eb and flow of the currents of magic in the universe. The possibilites are limitless in the fields of magic.",
+        "classes":
+        [
+            {
+                "class":"Arcanist",
+                "description":"Arcanists use the purest form of magic, what men call the arcane, and master it to it's full potential, being able to even bend the fabric of the universe.",
+                "points":[
+                "Cloth based",
+                "Arcane magic Based"  
+                ],
+                "subClasses":[
+                    {
+                        "subClassName":"Chronomancer",
+                        "description":"Chronomancers are an extremist sect of arcanists that search to control the fabric of time, winding time, creating paradoxes, freezeing and bending time as much as they can to control the course of battle. Who knows what they could be capable of if they are able to fully control time.",
+                        "points":[
+                            "Crowd control based class",
+                            "Time based",
+                            "Mid-ranged"
+                        ],
+                        "roles":[
+                            "DPS",
+                            "Support/Heal (Winding time on the wounds etc... )"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Arcane Mage",
+                        "description":"Arcane mages use the sheer power of the arcanes to inflict damage to their foes, bending space around or on their opponents. They have learned how to use the arcane to move through space with ease, while still incanting their spells.</br>(Think lux, wow arcane mage, diablo arcane, Zoe)",
+                        "points":[
+                            "Long ranged",
+                            "Cast while moving, very good movement"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Illusionists",
+                        "description":"Illusionists have an affinity in rogue like abilities, using the magics of arcane to confuse their opponents and reduce the amount of damage they take. Evasive and stelathy, using the powers of the arcane to empower their swords and daggers to inflict as much damage as possible.",
+                        "points":[
+                            "Illusion/CC based",
+                            "Mixed-ranged"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"???",
+                        "description":"???",
+                        "points":[
+                            "???"
+                        ],
+                        "roles":[
+                            "???"
+                        ]
+                    }
+                ]
+            },
+            {
+                "class":"Elementalist",
+                "description":"Elementalists are magic users that use the incantation and enhancement properties of magic to the elements.",
+                "points":[
+                "Cloth based",
+                "Element magic based"  
+                ],
+                "subClasses":[
+                    {
+                        "subClassName":"Chronomancer",
+                        "description":"!!!",
+                        "points":[
+                            "!!!"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"!!!",
+                        "description":"!!!",
+                        "points":[
+                            "!!!"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"!!!",
+                        "description":"!!!",
+                        "points":[
+                            "!!!"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"???",
+                        "description":"???",
+                        "points":[
+                            "???"
+                        ],
+                        "roles":[
+                            "???"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+
+
+
+
+    {
+        "order":"Man of Darkness",            
+        "description":"The men of darkness are travelers that use the powers of the void and the nether to inflict damage to their foes.<br/>They originate from men that communicates to the void in order to obtain great powers, using them in their turn. These powers are not to be trifuled with, they always have a cost, whether it's physical or mental, some even loose their soul to the entities they exchange with.",
+        "classes":
+        [
+            {
+                "class":"Warlock",
+                "description":"Warlocks are men that dabble mostly in the powers of the void and of demonology, casting powerfull spells and draining the force or making pacts with powerfull entities of the void and of the nether.",
+                "points":[
+                "Cloth based",
+                "Void magic Based"  
+                ],
+                "subClasses":[
+                    {
+                        "subClassName":"Occulist",
+                        "description":"Occulists dabble in the forces of agony and chaos, inflicting damage over time to their enemies, cursing them, and making sure they are unable to attack the warlock. They manipulate the souls of their enemies and their own in the process.",
+                        "points":[
+                            "Dot based class",
+                            "Curses",
+                            "Strong CC",
+                            "Mid-ranged"
+                        ],
+                        "roles":[
+                            "DPS",
+                            "Support (Or heal ? HEaling by healing the soul)"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Sorceress*",
+                        "description":"Sorceresses uses warlock powers to enhance their close quater combat by inbuing their scythes in void magics. They use the powers of the void and teachings in warrior combat to deal massive damage and stay alive using magic to drift through the fabric of the void to exit the neutral plain of existance.",
+                        "points":[
+                            "Scythe class",
+                            "Melee ranged",
+                            "Multiple Iframes (Voidshift)",
+                            "Strong damage, weak tankyness"
+                        ],
+                        "roles":[
+                            "DPS",
+                            "Tank ?(Dodge based, switch to plate ?)"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Summoner",
+                        "description":"Summoners are warlocks that have mastered the ways of summoning entities of the void and the neather. The summoner enslaves a prime entity and links their soul to their's to use their strength and powers. They can additionally summon lesser creatures to continously deal damage to their enemies or to aid summoners in their adventures.",
+                        "points":[
+                            "Pet based class",
+                            "Long-ranged"
+                        ],
+                        "roles":[
+                            "DPS",
+                            "Tank? (Lets the Summed entity to tank, linking it's health?)"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Destructor*",
+                        "description":"Destructors are warlocks that fully embrace spells to inflict massive damage to their targets. They use some of the most volitile void magic, taking more concentration to incant their spells.",
+                        "points":[
+                            "Long-ranged",
+                            "Mostly long cast based (Bursty)"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    }
+                ]
+            },
+            {
+                "class":"Warlord",
+                "description":"Warlords consume the souls of the entities of the void and the neather in order to empower themselves.",
+                "points":[
+                "Leather based",
+                "Void & Neather magic Based"  
+                ],
+                "subClasses":[
+                    {
+                        "subClassName":"Void slayer**",
+                        "description":"Void slayers** use their swift combat skills along side the powers they gain.",
+                        "points":[
+                            "Fast and evasive",
+                            "Fast and strong melee"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Demon hunter",
+                        "description":"Demon hunters are warlords that have either previously been hunters or have an affinity with hunting. They enhance their expertise by embuing the power of the void and the neather.",
+                        "points":[
+                            "Crossbow / bow class",
+                            "Mixed based",
+                            "Evasive"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Plague barer",
+                        "description":"Plague barers are able to absorb the soul of plagued entities, absorbing their powers and using them against their foes. They make the very soil rot in their path and make who they choose diseased and crippled.",
+                        "points":[
+                            "Dot synergy",
+                            "Melee",
+                            "Strong slow CC"
+                        ],
+                        "roles":[
+                            "DPS",
+                            "Tank"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Vampyra?",
+                        "description":"???",
+                        "points":[
+                            "Long-ranged"
+                        ],
+                        "roles":[
+                            "Support/ Heal ? (Using leaches and healing the flesh?)"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+
+
+
+
+    
+    {
+        "order":"Man of Nature",            
+        "description":"The men of nature are adventurers that have a high affinity with nature and it's beasts. </br> They live along the woods and survive with the teachings of nature, by hunting of nourishing the fruits that nature offers.",
+        "classes":
+        [
+            {
+                "class":"Druid",
+                "description":"Druid are men that have become one with the forces of nature, with it's beasts and it's plants. ",
+                "points":[
+                "Leather based",
+                "Nature magic Based",
+                "Metamorphosis"  
+                ],
+                "subClasses":[
+                    {
+                        "subClassName":"Saber",
+                        "description":"Sabers are druids that have mastered the art of metamorphosis and have even gone beyond, using the better of each preadator to become the ultimate being of the hunt.<br/>",
+                        "points":[
+                            "Melee",
+                            "Very agile",
+                            "Don't need to mount"
+                        ],
+                        "roles":[
+                            "DPS",
+                            "Tank"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Falcor*",
+                        "description":"Falcors are druids that mastered the powers of the air and metamorphosis, using them to imbue the cunningness of arial beings",
+                        "points":[
+                            "Long ranged",
+                            "Very agile",
+                            "Can fly temporarily"
+                        ],
+                        "roles":[
+                            "DPS",
+                            "Support ?"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Bard (Healer tree plant...)",
+                        "description":"Bards are druids that have fully imbued the forces of nature itself, using it to heal and control it's surroundings as it pleases. It can also inflict massive damage using it's surroundings.",
+                        "points":[
+                            "Lots of support potential",
+                            "Good amount of CC",
+                            "abilities change slightly depending on their surroundings"
+                        ],
+                        "roles":[
+                            "DPS/Support",
+                            "Healer/Support"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"???",
+                        "description":"???",
+                        "points":[
+                            "???"
+                        ],
+                        "roles":[
+                            "???"
+                        ]
+                    }
+                ]
+            },
+            {
+                "class":"Hunter",
+                "description":"Hunters are adventurers that use the teachings of nature in order to hunt it's beasts. Throughout his adventures, he uses what he has learned with nature against his foes.",
+                "points":[
+                "Leather based",
+                "Nature magic & physical Based"  
+                ],
+                "subClasses":[
+                    {
+                        "subClassName":"Archer",
+                        "description":"Archers are marksmen that have a high affinity with ranged weapons, notably bows. They use nature magic to enhance their projectiles in extraordinary ways.",
+                        "points":[
+                            "Fast and evasive",
+                            "Ranged"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Spearman",
+                        "description":"Like archers, <b>spearmen</b> use their affinity with nature to embue their hunting weapons, in this case the spear or polearms. They use speed and dexterity to bleed their opponents.",
+                        "points":[
+                            "Crossbow / bow class",
+                            "Mixed based",
+                            "Evasive"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Beast Master*",
+                        "description":"BEast masters use nature magic and taming techniques to subdue beasts of nature to their will.",
+                        "points":[
+                            "Pet class",
+                            "Choose range or melee"
+                        ],
+                        "roles":[
+                            "DPS",
+                            "Tank"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Trapper*",
+                        "description":"???",
+                        "points":[
+                            "???"
+                        ],
+                        "roles":[
+                            "DPS/Support"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    
+
+
+
+
+
+    {
+        "order":"Man of Combat",            
+        "description":"Men of combat are naturally strong and agile, and with intense training they become the master of their stance.<br/>",
+        "classes":
+        [
+            {
+                "class":"Rogues",
+                "description":"Rogues are adventurers that focus more on the schools of dexterity and speed",
+                "points":[
+                "Leather based",
+                "Stealth based"
+
+                ],
+                "subClasses":[
+                    {
+                        "subClassName":"Alchemist",
+                        "description":"Alchemists are rogues that use alchemy to create powerfull toxins and poisons to cripple and kill their foes. Additionally they soak their razor sharp weapons in poison to inflict massive damage to their enemies.",
+                        "points":[
+                            "Mixed ranged (daggers + vials)",
+                            "CC focused"
+                        ],
+                        "roles":[
+                            "DPS",
+                            "Support (Maybe healing)"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Assassin*",
+                        "description":"Assassins deadly weapons and ",
+                        "points":[
+                            "melee",
+                            "Very agile",
+                            "Improved stealth",
+                            "Bursty",
+                            "Very good CC",
+                            "USes speacial weapons (assassin daggers)"
+                        ],
+                        "roles":[
+                            "DPS",
+                            "Support ?"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Ninja",
+                        "description":"Ninjas are rogues that have mastered the eastern teachings in infiltration and sabotage and use them to dismantle their foes.",
+                        "points":[
+                            "Master of stealth",
+                            "Good amount of CC",
+                            "weapondry : darts/Shurikens/katana",
+                            "mixed range"
+                        ],
+                        "roles":[
+                            "DPS/Support",
+                            "Healer/Support"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Blade lancer*",
+                        "description":"???",
+                        "points":[
+                            "???"
+                        ],
+                        "roles":[
+                            "???"
+                        ]
+                    }
+                ]
+            },
+            {
+                "class":"Warrior",
+                "description":"Warriors are the staple of the adventurer, using nothing more than their skill in melee combat to defeat their foes.",
+                "points":[
+                "Plate based",
+                "Physical damage based" 
+                ],
+                "subClasses":[
+                    {
+                        "subClassName":"Berzerker*",
+                        "description":"Berzerkers are warriors that focus soley on dealing massive damage using their sheer strength.",
+                        "points":[
+                            "Fast movement",
+                            "Longer melee range",
+                            "Weak defensives for plate but still a bit tany"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Duelist*",
+                        "description":"Duelists are warriors that sacrifice toughness for a more agile stance in combat. They master the art of dual wielding and tactical combat to defeat their foes.",
+                        "points":[
+                            "Leather class",
+                            "Dual wielding",
+                            "Evasive"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Champion",
+                        "description":"Champions are the masters of heavy weaponry, using the greatsword or the greataxe to inflict massive damage to their enemies.",
+                        "points":[
+                            "Bursty but slow",
+                            "Melee",
+                            "Good amount of CC"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Protector",
+                        "description":"Protectors ",
+                        "points":[
+                            "Tanky",
+                            "weapon and shield",
+                            "Good CC"
+                        ],
+                        "roles":[
+                            "DPS/Support",
+                            "Tank"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    
+
+
+
+
+
+    {
+        "order":"Man of Mysticism",            
+        "description":"",
+        "classes":
+        [
+            {
+                "class":"Monk",
+                "description":"",
+                "points":[
+                "Leather based"
+
+                ],
+                "subClasses":[
+                    {
+                        "subClassName":"Serenity**",
+                        "description":"",
+                        "points":[
+                            "Mixed ranged",
+                            "CC and support"
+                        ],
+                        "roles":[
+                            "DPS/Support",
+                            "Healer"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Chi master**",
+                        "description":"Falcors are druids that mastered the powers of the air and metamorphosis, using them to imbue the cunningness of arial beings",
+                        "points":[
+                            "Polearm / spear",
+                            "Very agile",
+                            "Can fly temporarily"
+                        ],
+                        "roles":[
+                            "DPS",
+                            "Support ?"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Fire dragon**",
+                        "description":"Bards are druids that have fully imbued the forces of nature itself, using it to heal and control it's surroundings as it pleases. It can also inflict massive damage using it's surroundings.",
+                        "points":[
+                            "Lots of support potential",
+                            "Good amount of CC",
+                            "abilities change slightly depending on their surroundings"
+                        ],
+                        "roles":[
+                            "DPS/Support",
+                            "Healer/Support"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Water dragon**",
+                        "description":"???",
+                        "points":[
+                            "???"
+                        ],
+                        "roles":[
+                            "???"
+                        ]
+                    }
+                ]
+            },
+            {
+                "class":"Priest",
+                "description":"",
+                "points":[
+                "Holy magic based" 
+                ],
+                "subClasses":[
+                    {
+                        "subClassName":"Voidwalker",
+                        "description":"Archers are marksmen that have a high affinity with ranged weapons, notably bows. They use nature magic to enhance their projectiles in extraordinary ways.",
+                        "points":[
+                            "Fast and evasive",
+                            "Ranged"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Holy",
+                        "description":"Like archers, <b>spearmen</b> use their affinity with nature to embue their hunting weapons, in this case the spear or polearms. They use speed and dexterity to bleed their opponents.",
+                        "points":[
+                            "Crossbow / bow class",
+                            "Mixed based",
+                            "Evasive"
+                        ],
+                        "roles":[
+                            "DPS"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Paladin",
+                        "description":"Plague barers are able to absorb the soul of plagued entities, absorbing their powers and using them against their foes. They make the very soil rot in their path and make who they choose diseased and crippled.",
+                        "points":[
+                            "Dot synergy",
+                            "Melee",
+                            "Strong slow CC"
+                        ],
+                        "roles":[
+                            "DPS",
+                            "Tank"
+                        ]
+                    },
+                    {
+
+                        "subClassName":"Dark knight",
+                        "description":"???",
+                        "points":[
+                            "???"
+                        ],
+                        "roles":[
+                            "DPS/Support"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+
+
+
+    
+
+]
