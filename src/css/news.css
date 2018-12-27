@@ -2,6 +2,9 @@
     margin-top:32px;
 }
 
+.news a:hover{
+    text-decoration:none;
+}
 .news .news-container{
     position: relative;
 }
@@ -22,4 +25,12 @@
     color:black;
     background-color:rgb(105, 214, 105);
     text-decoration: none;
+}
+
+.news .article-info{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news .article-info p{
+    max-height:3.3em;
 }

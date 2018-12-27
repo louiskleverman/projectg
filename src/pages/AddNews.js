@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "../css/addNews.css";
 import * as firebase from 'firebase';
+import { Redirect } from "react-router-dom";
 
 
 class AddNews extends Component {
@@ -14,6 +15,7 @@ class AddNews extends Component {
         let content = document.getElementById("inputContent").value;
 
         if(title !== "" && preambul !== "" && content !== "" && this.state.imageSrc!=null){
+            document.getElementById("upload").style.display="block";
             //Retrieve session name
             let author = "Louis-Edouard Kleverman";
             var currentdate = new Date(); 
@@ -31,29 +33,53 @@ class AddNews extends Component {
                     nbPosts = Object.keys(data.toJSON()).length;
                 
                 console.log("data",nbPosts);
-                firebase.database().ref('news/'+nbPosts).set({
-                    title,
-                    author,
-                    published,
-                    thumbnail:"https://firebasestorage.googleapis.com/v0/b/project-g-b3aae.appspot.com/o/news%2Fbackground1.jpg?alt=media&token=9fb729d5-3c16-4a1d-9401-fe40bb0e013e",
-                    content,
-                    preambul
-            
-                }).then(()=>{
-                    console.log("inserted")
-                    firebase.storage().ref('news/article'+nbPosts).putString(this.state.imageSrc,'data_url')
-                    .then(()=>{
-                        console.log("Image uploaded!")
+                //Upload image
+                let task = firebase.storage().ref('news/article'+nbPosts).putString(this.state.imageSrc,'data_url')
+                task.on('state_changed',
+                    (snapshot) =>{
+                        let percentage = (snapshot.bytesTransferred / snapshot.totalBytes)*100;
+                        document.getElementById("progress").style.width=percentage+"%";
+                    },
+                    (err) => {
+                        console.log(err);
+                    },
+                    () => {
+                        document.getElementById("progress").style.backgroundColor="rgb(81, 255, 0)";
+
+                        //get Image URL
+                        firebase.storage().ref('news/article'+nbPosts).getDownloadURL().then((url) => {
+                            //upload news article with url
+                            firebase.database().ref('news/'+nbPosts).set({
+                                title,
+                                author,
+                                published,
+                                thumbnail:url,
+                                content,
+                                preambul
+                        
+                            }).then(()=>{
+                                alert("Article uploaded!");
+                                console.log("inserted");
+                                //Change page to newsfeed
+                                this.redirect();
+                                
+                            }).catch((error)=>{
+                                console.log(error);
+                            })
+                          }).catch(function(error) {
+        
+                          });
                     })
-                }).catch((error)=>{
-                    console.log(error);
-                })
             });   
             
         }
         else{
             alert("Please fill all fields");   
         }
+    }
+
+    redirect = () =>{
+        this.props.history.push("/news");
     }
 
     updateImage = () =>{
@@ -82,6 +108,11 @@ class AddNews extends Component {
                             <img 
                                 id="outputImage"
                                 src={this.state.imageSrc}/>
+                            <div id="upload">
+                                <div id="progressBar">
+                                    <div id="progress"></div>
+                                </div>
+                            </div>
                         </div>
                         <div className="col-md-8">
                             <input type="text" placeholder="TITLE" name="title" id="inputTitle"/>

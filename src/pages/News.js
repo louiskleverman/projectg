@@ -15,7 +15,7 @@ class News extends Component {
                     <div className="addNews"><NavLink to="/addNews">ADD NEWS</NavLink></div>
                     <h1>News</h1>
                     <p className="subtitle">Let's geeeet... RIGHT INTO THE NEEEWS!</p>
-                    <NewsFeed nbPosts={5} />
+                    <NewsFeed {...this.props} nbPosts={4} />
                 </div>
 
             </div>

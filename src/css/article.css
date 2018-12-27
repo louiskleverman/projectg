@@ -7,7 +7,6 @@
 
 }
 .article-box .article-box-info{
-    
     padding:32px 20px;
 }
 
@@ -15,6 +14,7 @@
     width:100%;
     height:300px;
     overflow: hidden;
+    border-bottom:3px solid rgb(65, 65, 65);
 }
 .article #articleThumbnail{
     width:100%;

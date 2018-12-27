@@ -23,10 +23,10 @@ class App extends Component {
             </header>
 
             <Switch>
-              <Route path="/" render={(props)=> <Home/>} exact/> 
+              <Route path="/" render={(props)=> <Home {...props}/>} exact/> 
               <Route path="/classes" render={(props)=> <Classes/>} /> 
               <Route path="/news" render={(props)=> <News/>} /> 
-              <Route path="/addNews" render={(props)=> <AddNews/>} /> 
+              <Route path="/addNews" render={(props)=> <AddNews {...props}/>} /> 
               <Route path="/article/:id" render={(props)=> <Article props={props}/>} /> 
             </Switch>
           </div>

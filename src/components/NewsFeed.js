@@ -15,10 +15,7 @@ class NewsFeed extends Component {
     componentDidMount(){
 
         if(this.props.nbPosts!=null){
-
             this.setState({nbPosts:this.props.nbPosts});
-            console.log("nbposts",this.state.nbPosts);
-            
         }
 
         firebase.database().ref('news').on('value', (data) => {
@@ -32,7 +29,10 @@ class NewsFeed extends Component {
                 
             for(let i = nbPosts-1 ; i >= 0 && j < this.state.nbPosts ; i--){
                 json[i].id = i;
+                
+                  
                 posts.push(json[i]);
+                
                 //console.log("json item",json[i]);
                 j++;
             }
@@ -41,6 +41,10 @@ class NewsFeed extends Component {
         })
 
         //this.refreshNews();
+    }
+
+    componentWillUnmount(){
+        firebase.database().ref('news').off();
     }
 
     render() {
