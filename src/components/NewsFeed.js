@@ -9,13 +9,17 @@ class NewsFeed extends Component {
         loadable:false,
         //the number of posts shown
         nbPosts:2,
-        posts:[]
+        posts:[],
+        pagination:false
     }
 
     componentDidMount(){
 
         if(this.props.nbPosts!=null){
             this.setState({nbPosts:this.props.nbPosts});
+        }
+        if(this.props.pagination!=null){
+            this.setState({pagination:this.props.pagination});
         }
 
         firebase.database().ref('news').on('value', (data) => {
@@ -70,31 +74,40 @@ class NewsFeed extends Component {
                         ))
                     }
                     </div>
+                    {
+                        this.state.pagination ? 
+                            <div className="pagination" onClick={()=>{this.pagination()} }>MORE</div>
+                        : ""
+                    }
                 </div>
             </div>
         );
     }
 
 
-
-
-    refreshNews = () =>{
-        /*
-        fetch('news.json')
-        .then((res) => res.json())
-        .then((json) => {
+    pagination = () =>{
+        let nbPosts = this.state.nbPosts + this.props.nbPosts;
+        firebase.database().ref('news').on('value', (data) => {
+            //console.log("firbase res",data.toJSON())
+            let json = data.toJSON();
             let posts = []
             let j = 0;
-            for(let i = json.length-1 ; i >= 0 && j < this.state.nbPosts ; i--){
+            let maxPosts = 0;
+            if(data.toJSON()!=null)
+                maxPosts = Object.keys(data.toJSON()).length;
+                
+            for(let i = maxPosts-1 ; i >= 0 && j < nbPosts ; i--){
+                json[i].id = i;
                 posts.push(json[i]);
-                console.log(json[i]);
                 j++;
             }
             console.log("posts",posts);
             this.setState({posts});
         })
-        */
+
+        this.setState({nbPosts});
     }
+
 }
 
 export default NewsFeed;
