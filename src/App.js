@@ -7,6 +7,7 @@ import AddNews from "./pages/AddNews.js";
 import Article from "./pages/Article.js";
 import { BrowserRouter , Route, Switch} from "react-router-dom"
 import Navigation from "./components/Navigation.js"
+import Footer from "./components/Footer.js"
 
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
               <Route path="/addNews" render={(props)=> <AddNews {...props}/>} /> 
               <Route path="/article/:id" render={(props)=> <Article props={props}/>} /> 
             </Switch>
+            <Footer/>
           </div>
         </BrowserRouter>
 
