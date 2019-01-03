@@ -34,7 +34,7 @@ class NewsFeed extends Component {
             for(let i = nbPosts-1 ; i >= 0 && j < this.state.nbPosts ; i--){
                 json[i].id = i;
                 posts.push(json[i]);
-                if(i == 0)
+                if(i === 0)
                     this.setState({pagination:false})
                 
                 //console.log("json item",json[i]);
@@ -99,7 +99,7 @@ class NewsFeed extends Component {
             for(let i = maxPosts-1 ; i >= 0 && j < nbPosts ; i--){
                 json[i].id = i;
                 posts.push(json[i]);
-                if(i == 0)
+                if(i === 0)
                     this.setState({pagination:false})
                 j++;
             }

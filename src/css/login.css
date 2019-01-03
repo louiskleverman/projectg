@@ -1,0 +1,27 @@
+#loginPage{
+    margin-top: 32px;
+}
+
+#loginPage input{
+    width:100%;    
+    background-color: rgba(0,0,0,0);
+    color:white;
+    margin-bottom:15px;
+    padding:5px;
+    border:2px solid rgb(197, 197, 197);
+}
+
+#loginPage button{
+    background-color: rgba(0,0,0,0);
+    color:white;
+    margin-bottom:15px;
+    padding:5px 15px;
+    border:2px solid var(--secondary-color);
+    text-transform: uppercase;
+    display:block;
+    margin:auto;
+}
+
+#login input{
+    border:2px solid var(--secondary-color);
+}

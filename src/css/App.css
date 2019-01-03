@@ -5,6 +5,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 
+:root{
+  --secondary-color: rgb(255, 123, 0);
+}
+
 body{
   background-color: rgb(27, 27, 27);
   color:rgb(255, 255, 255);

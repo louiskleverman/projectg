@@ -26,7 +26,7 @@
     content : ' ';
     width:0%;
     margin:auto;
-    border-top:4px solid rgb(255, 123, 0);
+    border-top:4px solid var(--secondary-color);
     transition:0.3s;
 }
 .navigation a:hover:before{
@@ -40,9 +40,36 @@
     bottom:0px;
     content : ' ';
     margin:auto;
-    border-top:4px solid rgb(255, 123, 0);
+    border-top:4px solid var(--secondary-color);
     transition:0.3s;
 }
 .navigation a.active{
     background-color: rgb(25, 36, 51);
+}
+
+#loginNav{
+    float:right;
+    width:150px;
+    background-color: rgb(134, 86, 67);
+}
+
+#loggedin{
+    color:white;
+    padding:20px 10px;
+    display: inline-block;
+    position:relative;
+    text-align: center;
+    transition:0.3s;
+    float:right;
+    padding-right:20px;
+}
+
+#loggedin span{
+    font-size: 0.8em;
+    padding:3px;
+    color:rgb(161, 65, 65);
+    border:1px solid rgb(161, 65, 65);
+    border-radius:3px;
+    margin-left:5px;
+    cursor: pointer;
 }

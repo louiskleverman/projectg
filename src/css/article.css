@@ -8,6 +8,7 @@
 }
 .article-box .article-box-info{
     padding:32px 20px;
+    position:relative;
 }
 
 .article .articleThumbnail-box{
@@ -43,4 +44,19 @@
     font-size:16px;
     padding:20px 0px;
     border-top:1px solid rgb(82, 82, 82);
+}
+
+.article-box-info #editArticle{
+    position:absolute;
+    right:10px;
+    top:40px;
+    color:rgb(233, 88, 21);
+    padding:5px 15px;
+    border:1px solid rgb(233, 88, 21);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.article-box-info #editArticle:hover{
+    background-color:rgb(233, 88, 21);
+    color:white;
 }
