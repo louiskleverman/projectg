@@ -6,7 +6,7 @@
 First you need to install the files, to do so simply clone the git :
 
 ``` 
-git clone ...
+git clone https://github.com/louiskleverman/projectg.git
 ```
 
 Then install the packages for the client and the server 
