@@ -1,0 +1,16 @@
+{
+  "name": "projectg_server",
+  "version": "1.0.0",
+  "description": "Project g's server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "louis kleverman",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "graphql-yoga": "^1.16.9",
+    "mongoose": "^5.4.3"
+  }
+}
