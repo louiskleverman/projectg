@@ -19,13 +19,13 @@ npm install
 ```
 
 To run the website, you have to go the following : 
-*Create a Config.js file in /client exporting the required information to connect to a firebase DB.
-*Run the server with the following :
+* Create a Config.js file in /client exporting the required information to connect to a firebase DB.
+* Run the server with the following :
 ``` 
 cd server
 node index.js
 ```
-*Run the client with 
+* Run the client with 
 ``` 
 cd client
 npm start
@@ -33,11 +33,11 @@ npm start
 
 ### Technologies used 
 
-*React
-*GraphQL / Express
-*Mongoose / MongoDB
-*Firebase
-*HTML/CSS/JS
+* React
+* GraphQL / Express
+* Mongoose / MongoDB
+* Firebase
+* HTML/CSS/JS
 
 ## What is projectG ?
 
