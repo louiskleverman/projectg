@@ -38,15 +38,20 @@ class Login extends Component {
                     <div className="col-md-6" id="login">
                         <h2>Login</h2>
                         <p>Log in here with either your email or your username.</p>
+                        <p id="loginEmailInfo" className="inputInfo">*Username invalid</p>
                         <input id="loginEmail" type="email" placeholder="Email or Username"/>
+                        <p id="loginPasswordInfo" className="inputInfo">*Password invalid</p>
                         <input id="loginPassword" type="password" placeholder="Your password"/>
                         <button onClick={()=>this.loggingIn()}>Login</button>
                     </div>
                     <div className="col-md-6" id="signup">
                         <h2>Sign up</h2>
                         <p>Sign up to get access to the game and the websites functionalities.</p>
+                        <p id="signupUsernameInfo" className="inputInfo">*Username invalid</p>
                         <input id="signupUsername" type="text" placeholder="Username" required/>
+                        <p id="signupEmailInfo" className="inputInfo">*Username invalid</p>
                         <input id="signupEmail" type="email" placeholder="Email" required/>
+                        <p id="signupPasswordInfo" className="inputInfo">*Username invalid</p>
                         <input id="signupPassword" type="password" placeholder="Your password" required/>
                         <input id="signupConfirmPassword" type="password" placeholder="Confirm password" required/>
                         <button onClick={()=>{this.signup()}}>sign up</button>
@@ -55,7 +60,22 @@ class Login extends Component {
             </div>
         );
     }
+
+    infoText = (id,text) => {
+        let p = document.getElementById(id);
+        p.innerHTML = text;
+        p.style.display = "block";
+    }
+    infoTextReset = () =>{
+        let infos = document.getElementsByClassName("inputInfo");
+        for(var i = 0 ; i < infos.length ; i++ ){
+            infos[i].style.display = "none";
+        }
+
+    }
+
     signup = async() =>{
+        this.infoTextReset();
         var username = document.getElementById("signupUsername").value;
         var email = document.getElementById("signupEmail").value;
         var pwd = document.getElementById("signupPassword").value;
@@ -63,13 +83,13 @@ class Login extends Component {
         
         if(pwd !== confirmPassword){
             //show error
-            alert("Passwords aren't equal");
-        }else if(email === null){
+            this.infoText("signupPasswordInfo","*Passwords don't match.");
+        }else if(email === ""){
             //show error
-            alert("email is null")
-        }else if(username === null){
+            this.infoText("signupEmailInfo","*Please type your email.");
+        }else if(username === ""){
             //show error
-            alert("username is null")
+            this.infoText("signupUsernameInfo","*Please type your username.");
         }
         else{
             this.props.createUser({
@@ -93,17 +113,17 @@ class Login extends Component {
                 switch(e.message){
                     case 'GraphQL error: Username & email already exists':
                         //do stuff
-                        alert("email & username unavailable");
+                        this.infoText("signupUsernameInfo","*Username unavailable.");
+                        this.infoText("signupEmailInfo","*Email unavailable.");
                         break;
                     case 'GraphQL error: Username already exists':
                         //do stuff
-                        alert("username unavailable");
+                        this.infoText("signupUsernameInfo","*Username unavailable.");
                         break;
                     case 'GraphQL error: Email already exists':
                         //do stuff
-                        alert("email unavailable");
+                        this.infoText("signupEmailInfo","*Email unavailable.");
                         break;
-                    
                 } 
             });
             
@@ -113,13 +133,14 @@ class Login extends Component {
 
 
     loggingIn = () =>{
+        this.infoTextReset();
         var identifier = document.getElementById("loginEmail").value;
         var pwd = document.getElementById("loginPassword").value;
 
-        if(identifier === null){
-            alert("Please type identifier")
-        }else if(pwd === null){
-            alert("please type password");
+        if(identifier === ""){
+            this.infoText("loginEmailInfo","*Please type your Username or your email.");
+        }else if(pwd === ""){
+            this.infoText("loginPasswordInfo","*Please type your password.");
         }
         else{
             this.props.loginUser({
@@ -143,15 +164,15 @@ class Login extends Component {
                 switch(e.message){
                     case 'GraphQL error: Password incorrect':
                         //do stuff
-                        alert("Password incorrect");
+                        this.infoText("loginPasswordInfo","*Password incorrect.")
                         break;
                     case 'GraphQL error: Username not found':
                         //do stuff
-                        alert("Username not found");
+                        this.infoText("loginEmailInfo","*Username not found.");
                         break;
                     case 'GraphQL error: Email not found':
                         //do stuff
-                        alert("Email not found");
+                        this.infoText("loginEmailInfo","*Email not found.");
                         break;
                 } 
             });
