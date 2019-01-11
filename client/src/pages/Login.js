@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import "../css/login.css"
 import { connect } from 'react-redux';
 import { login } from '../actions/loginActions'
-import { SHA256 } from 'crypto-js';
 
 import gql from 'graphql-tag'
 import { graphql, compose } from 'react-apollo';
-import * as firebase from 'firebase';
 
 const createUserMutation = gql`
 mutation($username:String!,$email:String!,$pwd:String!){
@@ -118,9 +116,9 @@ class Login extends Component {
         var identifier = document.getElementById("loginEmail").value;
         var pwd = document.getElementById("loginPassword").value;
 
-        if(identifier == null){
+        if(identifier === null){
             alert("Please type identifier")
-        }else if(pwd == null){
+        }else if(pwd === null){
             alert("please type password");
         }
         else{
@@ -155,92 +153,11 @@ class Login extends Component {
                         //do stuff
                         alert("Email not found");
                         break;
-                    
                 } 
             });
         }
-
-
     }
 
-
-    // loggingIn = () =>{
-    //     var email = document.getElementById("loginEmail").value;
-    //     var password = document.getElementById("loginPassword").value;
-    //     firebase.database().ref('users').once('value',(data)=>{
-    //         let json = data.toJSON();
-    //         console.log(json);
-    //         for(var i = 0 ; i < Object.keys(json).length ; i++){
-    //             if(email == json[i].email || email == json[i].username){
-
-    //                 var y = json[i].password;
-    //                 var x = SHA256(password);
-    //                 let equals = true;
-    //                 for(var j = 0 ; j < x.words.length ; j++ ){
-    //                     if(x.words[j] != y.words[j]){
-    //                         equals = false;
-    //                     }
-    //                 }
-
-    //                 if(equals === true){
-    //                     var login = {
-    //                         username : json[i].username,
-    //                         email : json[i].email,
-    //                         admin : json[i].admin
-    //                     }
-    //                     this.props.login(login);
-    //                     alert("You have succesfully logged in !");
-    //                     this.props.history.push("/");
-    //                 }else{
-    //                     alert("wrong password");
-    //                 }
-    //             }
-    //         }
-
-
-    //     }).catch((error)=>{
-    //         console.log(error);
-    //     })
-    // }
-
-    // signup = () =>{
-    //     var username = document.getElementById("signupUsername").value;
-    //     var email = document.getElementById("signupEmail").value;
-    //     var password = document.getElementById("signupPassword").value;
-    //     var confirmPassword = document.getElementById("signupConfirmPassword").value;
-
-    //     if(username != null && email != null && password != null && password == confirmPassword){
-    //         firebase.database().ref('users').once('value',(data)=>{
-    //             let nbUsers = 0;
-
-    //             if(data.toJSON()!=null)
-    //                 nbUsers = Object.keys(data.toJSON()).length;
-
-    //             firebase.database().ref('users/'+nbUsers).set({
-    //                 username : username,
-    //                 email : email,
-    //                 password : SHA256(password),
-    //                 admin : false,
-    //             }).then(()=>{
-    //                 var user = {
-    //                     username : username,
-    //                     email : email,
-    //                     admin : false,
-    //                 }
-
-    //                 this.props.login(user);
-    //                 alert("You have succesfully created your account!");
-    //                 this.props.history.push("/");
-                    
-    //             }).catch((error)=>{
-    //                 console.log(error);
-    //             })
-    //         }).catch((error)=>{
-    //             console.log(error);
-    //         })
-
-    //     }
-    // }
 }
 
 const mapStateToProps = state =>({
