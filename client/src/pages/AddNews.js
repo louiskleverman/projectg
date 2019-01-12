@@ -8,6 +8,7 @@ class AddNews extends Component {
     state = {
         imageSrc : null
     }
+    
 
     submit = () =>{
         let title = document.getElementById("inputTitle").value;

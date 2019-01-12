@@ -7,6 +7,7 @@ import News from "./pages/News.js";
 import AddNews from "./pages/AddNews.js";
 import Article from "./pages/Article.js";
 import Login from "./pages/Login.js";
+import EditArticle from "./pages/EditArticle.js"
 
 import Navigation from "./components/Navigation.js"
 import Footer from "./components/Footer.js"
@@ -36,7 +37,8 @@ class App extends Component {
                 <Route path="/news" render={(props)=> <News/>} /> 
                 <Route path="/addNews" render={(props)=> <AddNews {...props}/>} /> 
                 <Route path="/login" render={(props)=> <Login {...props}/>} /> 
-                <Route path="/article/:id" render={(props)=> <Article props={props}/>} /> 
+                <Route path="/article/:id" render={(props)=> <Article {...props}/>} /> 
+                <Route path="/editArticle" render={(props)=> <EditArticle {...props}/>} /> 
               </Switch>
               <Footer/>
             </div>

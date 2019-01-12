@@ -20,13 +20,21 @@ class Article extends Component {
 
     componentDidMount (){
         //console.log("id : " , this.props.props.match.params.id);
-        let id = this.props.props.match.params.id;
+        let id = this.props.match.params.id;
         firebase.database().ref('news/'+id).on('value',(data)=>{
             console.log("data",data.toJSON());
             let article = data.toJSON();
             this.setState({article});
         })
     }
+
+    editArticle = () =>{
+        this.props.history.push({
+            pathname:"/editArticle",
+            state:{article : this.state.article, id : this.props.match.params.id}
+        });
+    }
+    
 
     render() {
 
@@ -63,10 +71,6 @@ class Article extends Component {
         );
     }
 
-    editArticle = () =>{
-        //document.getElementById("modal").modal('show');
-        //$('#modal').modal('show');  
-    }
 
 }
 

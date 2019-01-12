@@ -1,8 +1,8 @@
-.addNews{
+.addNews,.editArticle{
     margin-top:32px;
 }
 
-.addNews input#inputTitle{
+.addNews input#inputTitle,.editArticle input#inputTitle{
     width:100%;
     background-color: rgba(0,0,0,0);
     color:rgb(226, 226, 226);
@@ -12,7 +12,7 @@
     margin-bottom:5px;
     display: block;
 }
-.addNews textarea{
+.addNews textarea,.editArticle textarea{
     width:100%;
     background-color: rgba(0,0,0,0);
     color:rgb(226, 226, 226);
@@ -23,11 +23,11 @@
     display: block;
     height:6em;
 }
-.addNews textarea#inputContent{
+.addNews textarea#inputContent,.editArticle textarea#inputContent{
     height:30em;
 }
 
-#outputImage{
+.addNews #outputImage{
     width:98%;
     height:auto;
     display: block;
@@ -35,13 +35,13 @@
     border:2px solid rgba(255, 123, 0, 0.329);
 }
 
-#inputImage{
+.addNews #inputImage,.editArticle #inputImage{
     color: var(--secondary-color);
     border:1px solid white;
     padding:5px;
 }
 
-.addNews button#inputButton{
+.addNews button#inputButton,.editArticle button#inputButton{
     cursor: pointer;
     color:white;
     background-color: rgba(0,0,0,0);
@@ -53,22 +53,22 @@
     margin-bottom:32px;
     transition:0.3s;
 }
-.addNews button#inputButton:hover{
+.addNews button#inputButton:hover,.editArticle button#inputButton:hover{
     color:black;
     background-color: white;
 }
 
-.addNews #upload{
+.addNews #upload,.editArticle{
     display:none;
 }
-.addNews #upload #progressBar{
+.addNews #upload #progressBar,.editArticle #upload #progressBar{
     appearance: none;   
     padding:4px;
     background-color: rgb(8, 8, 8);
     border-radius:10px;
    
 }
-.addNews #upload #progressBar #progress{
+.addNews #upload #progressBar #progress,.editArticle #upload #progressBar #progress{
     width:0%;
     height:15px;
     background-color: var(--secondary-color);
