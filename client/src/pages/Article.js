@@ -50,23 +50,9 @@ class Article extends Component {
                         <p id="articleInfo"><span id="articleAuthor">By : {this.state.article.author}</span> | <span id="articlePublished">published : {this.state.article.published}</span></p>
                         <p id="articlePreambul">{this.state.article.preambul}</p>
                         <p id="articleContent" dangerouslySetInnerHTML={{__html: this.state.article.content}}></p>
-                        <button type="button" className="btn btn-primary" data-toggle="modal" data-target=".modalTest">Large modal</button>
                     </div>
                 </div>
-
-
-                <div id="modal" class="modal modalTest" tabindex="-1" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <p>Modal body text goes here.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
+                
             </div>
         );
     }

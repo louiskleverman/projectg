@@ -92,15 +92,15 @@ class EditArticle extends Component {
                                 alert("Article uploaded!");
                                 console.log("inserted");
                                 //Change page to newsfeed
-                                this.redirect();
+                                this.props.history.push("/article/"+this.state.id);
                                 
                             }).catch((error)=>{
                                 console.log(error);
                             })
-                            }).catch(function(error) {
+                        }).catch(function(error) {
         
-                            });
-                        })
+                        });
+                    })
                  
             }
             else{
@@ -116,7 +116,7 @@ class EditArticle extends Component {
                     alert("Article uploaded!");
                     console.log("inserted");
                     //Change page to newsfeed
-                    this.redirect();
+                    this.props.history.push("/article/"+this.state.id);
                     
                 }).catch((error)=>{
                     console.log(error);

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "../css/addNews.css";
 import * as firebase from 'firebase';
 import { Redirect } from "react-router-dom";
+import { connect } from 'react-redux';
 
 
 class AddNews extends Component {
@@ -18,7 +19,7 @@ class AddNews extends Component {
         if(title !== "" && preambul !== "" && content !== "" && this.state.imageSrc!=null){
             document.getElementById("upload").style.display="block";
             //Retrieve session name
-            let author = "Louis-Edouard Kleverman";
+            let author = this.props.login.username;
             var currentdate = new Date(); 
             var published = currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
@@ -61,8 +62,7 @@ class AddNews extends Component {
                             }).then(()=>{
                                 alert("Article uploaded!");
                                 console.log("inserted");
-                                //Change page to newsfeed
-                                this.redirect();
+                                this.props.history.push("/news");
                                 
                             }).catch((error)=>{
                                 console.log(error);
@@ -77,10 +77,6 @@ class AddNews extends Component {
         else{
             alert("Please fill all fields");   
         }
-    }
-
-    redirect = () =>{
-        this.props.history.push("/news");
     }
 
     updateImage = () =>{
@@ -101,6 +97,13 @@ class AddNews extends Component {
     render() {
         return (
             <div className="addNews">
+                {
+                    this.props.login.admin != undefined ?
+                        this.props.login.admin ?
+                        ""
+                        : <Redirect to="/"/>
+                    : <Redirect to="/"/>
+                }
                 <div className="container">
                     <h1>New News Article</h1>
                     <div className="row">
@@ -135,4 +138,8 @@ class AddNews extends Component {
 
 }
 
-export default AddNews;
+const mapStateToProps = state =>({
+    login: state.login.login
+});
+
+export default connect(mapStateToProps)(AddNews);

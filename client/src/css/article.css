@@ -60,3 +60,15 @@
     background-color:rgb(233, 88, 21);
     color:white;
 }
+
+
+.article #articleContent h2{
+    margin-top:20px;
+    font-weight: 400;
+    color:rgb(202, 202, 202);
+}
+
+.article #articleContent p{
+    font-weight: 100;
+    color:rgb(202, 202, 202);
+}
