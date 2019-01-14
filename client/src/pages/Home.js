@@ -13,7 +13,7 @@ class Home extends Component {
                 <div className="container">
                     <div className="introduction">
                         <h1>Welcome to Project G</h1>
-                        <p className="subtitle">Where all the info on the best upcomming MMO-RPG will appear</p>
+                        <p className="subtitle">Where all the info on the upcomming MMO-RPG,Project G, will appear.</p>
                         <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pretium nisi venenatis, vehicula orci id, congue nulla. 
                         Vestibulum ac ipsum odio. Cras vestibulum tempus arcu, ac ornare mi gravida at. Donec nibh ipsum, 

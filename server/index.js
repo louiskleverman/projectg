@@ -27,7 +27,8 @@ const typeDefs = `
       updateUsername(id: ID!, name: String!): User,
       removeUser(id:ID!): Boolean,
       removeAllUsers(id:ID!) :Boolean,
-      login(identifier:String!,pwd:String!):User
+      login(identifier:String!,pwd:String!):User,
+      loginCookie(id:ID!,expire:Int!):User
   }
 `
 
@@ -135,7 +136,20 @@ const resolvers = {
                 return u;
             }
         }
-      }
+      },
+      loginCookie: async(_,{id,expire})=>{
+        const u = await User.findById(id,function(err,user){
+            if(err){
+                //throw err;
+            }
+            if(user != null){
+                
+            }
+        });
+
+        return u;
+    }
+      
   }
 }
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "../css/article.css";
 // import NewsFeed from "../components/NewsFeed.js";
 import * as firebase from 'firebase';
+import { connect } from 'react-redux';
 
 
 class Article extends Component {
@@ -37,15 +38,19 @@ class Article extends Component {
     
 
     render() {
-
         return (
             <div className="article">
                 <div className="container article-box">
                     <div className="articleThumbnail-box">
-                        <img id="articleThumbnail" src={this.state.article.thumbnail}/>
+                        <img id="articleThumbnail" src={this.state.article.thumbnail} alt="article thumbnail"/>
                     </div>
                     <div className="article-box-info">
-                        <div id="editArticle" onClick={()=>{this.editArticle()}}>Edit</div>
+                    {
+                        this.props.login.username === this.state.article.author ?
+                            <div id="editArticle" onClick={()=>{this.editArticle()}}>Edit</div>
+                        : ""
+                    }
+                        
                         <h1 id="articleTitle">{this.state.article.title}</h1>
                         <p id="articleInfo"><span id="articleAuthor">By : {this.state.article.author}</span> | <span id="articlePublished">published : {this.state.article.published}</span></p>
                         <p id="articlePreambul">{this.state.article.preambul}</p>
@@ -60,4 +65,9 @@ class Article extends Component {
 
 }
 
-export default Article;
+
+const mapStateToProps = state =>({
+    login: state.login.login
+});
+
+export default connect(mapStateToProps)(Article);

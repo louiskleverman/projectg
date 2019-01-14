@@ -86,7 +86,7 @@ class AddNews extends Component {
             this.setState({imageSrc:e.target.result});
             //console.log("Image",this.state.imageSrc);
         }
-        if(document.getElementById("inputImage").files[0]!=null)
+        if(document.getElementById("inputImage").files[0]!==null)
             reader.readAsDataURL(document.getElementById("inputImage").files[0]);
         else{
             this.setState({imageSrc:null});
@@ -98,7 +98,7 @@ class AddNews extends Component {
         return (
             <div className="addNews">
                 {
-                    this.props.login.admin != undefined ?
+                    this.props.login.admin !== undefined ?
                         this.props.login.admin ?
                         ""
                         : <Redirect to="/"/>
@@ -110,6 +110,7 @@ class AddNews extends Component {
                         <div className="col-md-4">
                             <input type="file" id="inputImage" onChange={this.updateImage}/>
                             <img 
+                                alt={"article"}
                                 id="outputImage"
                                 src={this.state.imageSrc}/>
                             <div id="upload">

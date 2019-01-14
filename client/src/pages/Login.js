@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "../css/login.css"
 import { connect } from 'react-redux';
 import { login } from '../actions/loginActions'
+import { withCookies } from 'react-cookie';
 
 import gql from 'graphql-tag'
 import { graphql, compose } from 'react-apollo';
@@ -39,26 +40,37 @@ class Login extends Component {
                         <h2>Login</h2>
                         <p>Log in here with either your email or your username.</p>
                         <p id="loginEmailInfo" className="inputInfo">*Username invalid</p>
-                        <input id="loginEmail" type="email" placeholder="Email or Username"/>
+                        <input id="loginEmail" type="email" placeholder="Email or Username" onKeyPress={this.loginHandler}/>
                         <p id="loginPasswordInfo" className="inputInfo">*Password invalid</p>
-                        <input id="loginPassword" type="password" placeholder="Your password"/>
+                        <input id="loginPassword" type="password" placeholder="Your password" onKeyPress={this.loginHandler}/>
                         <button onClick={()=>this.loggingIn()}>Login</button>
                     </div>
                     <div className="col-md-6" id="signup">
                         <h2>Sign up</h2>
                         <p>Sign up to get access to the game and the websites functionalities.</p>
                         <p id="signupUsernameInfo" className="inputInfo">*Username invalid</p>
-                        <input id="signupUsername" type="text" placeholder="Username" required/>
+                        <input id="signupUsername" type="text" placeholder="Username" onKeyPress={this.signupHandler} required/>
                         <p id="signupEmailInfo" className="inputInfo">*Username invalid</p>
-                        <input id="signupEmail" type="email" placeholder="Email" required/>
+                        <input id="signupEmail" type="email" placeholder="Email" onKeyPress={this.signupHandler} required/>
                         <p id="signupPasswordInfo" className="inputInfo">*Username invalid</p>
-                        <input id="signupPassword" type="password" placeholder="Your password" required/>
-                        <input id="signupConfirmPassword" type="password" placeholder="Confirm password" required/>
+                        <input id="signupPassword" type="password" placeholder="Your password" onKeyPress={this.signupHandler} required/>
+                        <input id="signupConfirmPassword" type="password" placeholder="Confirm password" onKeyPress={this.signupHandler} required/>
                         <button onClick={()=>{this.signup()}}>sign up</button>
                     </div>
                 </div>
             </div>
         );
+    }
+
+    signupHandler = (event) =>{
+        if(event.key === 'Enter'){
+            this.signup();
+          }
+    }
+   loginHandler = (event) =>{
+        if(event.key === 'Enter'){
+            this.loggingIn();
+          }
     }
 
     infoText = (id,text) => {
@@ -98,7 +110,7 @@ class Login extends Component {
                     email,
                     pwd
                 }
-            }).then(()=>{
+            }).then((data)=>{
                 var user = {
                     username : username,
                     email : email,
@@ -123,6 +135,8 @@ class Login extends Component {
                     case 'GraphQL error: Email already exists':
                         //do stuff
                         this.infoText("signupEmailInfo","*Email unavailable.");
+                        break;
+                    default:
                         break;
                 } 
             });
@@ -154,6 +168,8 @@ class Login extends Component {
                     email : data.data.login.email,
                     admin : data.data.login.admin,
                 }
+                this.props.cookies.set('loginId',data.data.login.id,{maxAge: 60});
+                this.props.cookies.set('loginExpire',530,{maxAge: 60});
                 //console.log("login",user);
                 this.props.login(user);
                 alert("You have been logged in!");
@@ -174,6 +190,8 @@ class Login extends Component {
                         //do stuff
                         this.infoText("loginEmailInfo","*Email not found.");
                         break;
+                    default:
+                        break;
                 } 
             });
         }
@@ -185,7 +203,7 @@ const mapStateToProps = state =>({
     login: state.login.login
 });
 
-export default compose(
+export default withCookies(compose(
     graphql(createUserMutation,{name:"createUser"}),
     graphql(loginQuery,{name:"loginUser"})
-  )(connect(mapStateToProps, { login })(Login));
+  )(connect(mapStateToProps, { login })(Login)));

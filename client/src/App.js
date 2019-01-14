@@ -13,15 +13,56 @@ import Navigation from "./components/Navigation.js"
 import Footer from "./components/Footer.js"
 
 import { BrowserRouter , Route, Switch} from "react-router-dom"
-import { Provider } from 'react-redux';
-import { store } from './store.js';
+import { withCookies } from 'react-cookie';
 
+//Redux Login
+import { connect } from 'react-redux';
+import { login } from './actions/loginActions'
+
+//GraphQL for login
+import gql from 'graphql-tag'
+import { graphql, compose } from 'react-apollo';
+
+
+const loginQuery = gql`
+  mutation($id:ID!,$expire:Int!){
+    loginCookie(id: $id, expire: $expire) {
+      id
+      username
+      email
+      pwd
+      admin
+    }
+  }
+`;
 
 class App extends Component {
-  
+  componentDidMount(){
+    if(this.props.cookies.cookies.loginId != null){
+      console.log("cookies",this.props.cookies.cookies)
+      this.props.loginUserCookies({
+        variables:{
+            id:this.props.cookies.cookies.loginId,
+            expire:parseInt(this.props.cookies.cookies.loginExpire)
+        }
+      }).then((data)=>{
+        console.log("data",data);
+          var user = {
+              username : data.data.loginCookie.username,
+              email : data.data.loginCookie.email,
+              admin : data.data.loginCookie.admin,
+          }
+          this.props.login(user);
+          //alert("You have been logged in!");
+          this.props.history.push("/");
+      
+      }).catch((e)=>{
+          console.log('error',e.message);
+      });
+    }
+  }
   render() {
     return (
-      <Provider store={store}>
         <div className="App">
           <BrowserRouter>
             <div>
@@ -45,9 +86,15 @@ class App extends Component {
           </BrowserRouter>
 
         </div>
-      </Provider>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state =>({
+  login: state.login.login
+});
+
+export default withCookies(compose(
+  graphql(loginQuery,{name:"loginUserCookies"})
+  )(connect(mapStateToProps, { login })(App))
+);

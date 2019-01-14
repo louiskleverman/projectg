@@ -34,6 +34,8 @@ npm start
 ### Technologies used 
 
 * React
+* Redux
+* React Router DOM
 * GraphQL / Express
 * Mongoose / MongoDB
 * Firebase
@@ -41,6 +43,6 @@ npm start
 
 ## What is projectG ?
 
-Project G is a gaming website inspired website showcasing information on the MMORPG Game.
+Project G is a gaming website showcasing information on the MMORPG Game.
 
 ##

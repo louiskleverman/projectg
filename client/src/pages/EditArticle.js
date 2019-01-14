@@ -140,6 +140,7 @@ class EditArticle extends Component {
                         <div className="col-md-4">
                             <input type="file" id="inputImage" onChange={this.updateImage}/>
                             <img 
+                                alt="outputed"
                                 id="outputImage"
                                 src={this.state.article.image}/>
                             <div id="upload">
